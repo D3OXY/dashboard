@@ -2,13 +2,16 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Configuration;
 use App\Models\Settings;
 use Closure;
 use Illuminate\Http\Request;
 
 class GlobalNames
 {
+
+    protected $except_urls = [
+        'install'
+    ];
     /**
      * Handle an incoming request.
      *

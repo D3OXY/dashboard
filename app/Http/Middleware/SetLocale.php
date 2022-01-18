@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Session;
 
 class SetLocale
 {
+    protected $except_urls = [
+        'install'
+    ];
 
     /**
      *
@@ -21,6 +24,14 @@ class SetLocale
      */
     public function handle($request, Closure $next)
     {
+        $regex = '#' . implode('|', $this->except_urls) . '#';
+
+        if (preg_match($regex, $request->path()))
+        {
+            return $next($request);
+        }
+
+
         if (Session::has('locale')) {
             $locale = Session::get('locale', config("SETTINGS::LOCALE:DEFAULT"));
         } else {

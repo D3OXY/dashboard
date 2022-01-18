@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VoucherController;
 use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InstallController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProductController as FrontProductController;
 use App\Http\Controllers\ProfileController;
